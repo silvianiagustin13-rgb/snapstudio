@@ -44,8 +44,6 @@ while ($f = mysqli_fetch_assoc($foto_result)) $fotos[] = $f;
 </div>
 
 <div class="row g-3 mb-4">
-
-    <!-- Total Paket -->
     <div class="col-md-4 col-12">
         <div class="stat-card-new" style="background:linear-gradient(135deg,#FF6B9D 0%,#FF8C69 100%);">
             <div class="stat-card-inner">
@@ -63,8 +61,6 @@ while ($f = mysqli_fetch_assoc($foto_result)) $fotos[] = $f;
             <a href="paket.php" class="stat-card-link">Lihat semua paket <i class="fas fa-arrow-right"></i></a>
         </div>
     </div>
-
-    <!-- Tersedia -->
     <div class="col-md-4 col-12">
         <div class="stat-card-new" style="background:linear-gradient(135deg,#06B6D4 0%,#0891B2 100%);">
             <div class="stat-card-inner">
@@ -137,8 +133,6 @@ while ($f = mysqli_fetch_assoc($foto_result)) $fotos[] = $f;
             </button>
             <?php endforeach; ?>
         </div>
-
-        <!-- Grid Foto -->
         <div class="portfolio-grid" id="portfolio-grid">
             <?php foreach ($fotos as $i => $foto):
                 $img_path = 'uploads/' . $foto['foto_paket'];
