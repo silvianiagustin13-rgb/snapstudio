@@ -1,17 +1,16 @@
 <?php
-include 'partials/header.php';
 include 'koneksi.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $id_paket     = trim($_POST['id_paket']);
-    $nama_paket   = trim($_POST['nama_paket']);
-    $kategori     = $_POST['kategori'];
-    $durasi_sesi  = intval($_POST['durasi_sesi']);
-    $harga        = floatval(str_replace(['.', ','], ['', '.'], $_POST['harga']));
-    $jumlah_foto  = intval($_POST['jumlah_foto']);
-    $deskripsi    = trim($_POST['deskripsi']);
+    $id_paket      = trim($_POST['id_paket']);
+    $nama_paket    = trim($_POST['nama_paket']);
+    $kategori      = $_POST['kategori'];
+    $durasi_sesi   = intval($_POST['durasi_sesi']);
+    $harga         = floatval(str_replace(['.', ','], ['', '.'], $_POST['harga']));
+    $jumlah_foto   = intval($_POST['jumlah_foto']);
+    $deskripsi     = trim($_POST['deskripsi']);
     $tanggal_input = $_POST['tanggal_input'];
-    $status       = $_POST['status'];
+    $status        = $_POST['status'];
 
     $cek = mysqli_query($koneksi, "SELECT id_paket FROM tb_paket_foto WHERE id_paket='$id_paket'");
     if (mysqli_num_rows($cek) > 0) {
@@ -53,6 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 }
+
+include 'partials/header.php';
 ?>
 
 <div class="main-content">
@@ -61,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $(document).ready(function(){
     toastr.options = { positionClass:'toast-top-right', timeOut:4000, progressBar:true, closeButton:true };
     <?php if (isset($_GET['error'])): ?>
-        toastr.error('<?php echo htmlspecialchars($_GET['error']); ?>', '❌ Gagal!');
+        toastr.error('<?php echo addslashes(strip_tags($_GET['error'])); ?>', '❌ Gagal!');
     <?php endif; ?>
 });
 </script>
