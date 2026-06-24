@@ -1,8 +1,8 @@
 <?php
-$server   = getenv('DB_HOST')     ?: 'sql12.freesqldatabase.com';
-$username = getenv('DB_USER')     ?: 'sql12831420';
-$password = getenv('DB_PASS')     ?: 'PVr6LbF2in';
-$db       = getenv('DB_NAME')     ?: 'sql12831420';
+$server   = "localhost";
+$username = "root";
+$password = "";
+$db       = "db_studio_foto";
 
 $koneksi = mysqli_connect($server, $username, $password, $db);
 if (!$koneksi) {
