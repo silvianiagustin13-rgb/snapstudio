@@ -29,7 +29,6 @@
 
 </div>
 
-<!-- Modal -->
 <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content" style="border-radius:20px; border:none; overflow:hidden;">
