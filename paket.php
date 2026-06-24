@@ -29,7 +29,6 @@ $(document).ready(function(){
     </div>
 </div>
 
-<!-- Table Card -->
 <div class="snap-card">
     <div class="card-body">
         <div style="overflow-x:auto;">
