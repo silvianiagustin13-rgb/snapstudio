@@ -4,7 +4,6 @@ include 'koneksi.php';
 if (isset($_GET['id'])) {
     $id = mysqli_real_escape_string($koneksi, $_GET['id']);
 
-    // Ambil nama & foto untuk feedback & cleanup
     $res = mysqli_query($koneksi, "SELECT nama_paket, foto_paket FROM tb_paket_foto WHERE id_paket='$id'");
     $row = mysqli_fetch_assoc($res);
 
