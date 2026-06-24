@@ -18,7 +18,6 @@ $pdf->setPrintFooter(false);
 $pdf->SetMargins(12, 14, 12);
 $pdf->AddPage();
 
-// Header laporan
 $html  = '<table cellpadding="4" cellspacing="0" style="width:100%; margin-bottom:12px;">';
 $html .= '<tr>';
 $html .= '<td style="width:60px; vertical-align:middle; text-align:center; font-size:36px;">📸</td>';
@@ -32,10 +31,8 @@ $html .= '</td>';
 $html .= '</tr></table>';
 $html .= '<hr style="border:2px solid #FF6B9D; margin-bottom:10px;">';
 
-// Judul
 $html .= '<h2 style="text-align:center; color:#2D1B4E; font-family:helvetica; font-size:13pt; margin:0 0 12px 0;">LAPORAN DATA PAKET FOTO STUDIO</h2>';
 
-// Tabel data
 $html .= '<table border="1" cellpadding="6" cellspacing="0" style="width:100%; border-collapse:collapse; font-size:8.5pt;">';
 $html .= '<thead>';
 $html .= '<tr style="background-color:#FF6B9D; color:white; font-weight:bold; text-align:center;">';
@@ -62,7 +59,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     $bg = ($no % 2 == 0) ? '#FFF0F5' : '#FFFFFF';
     $total_harga += $row['harga'];
 
-    // Foto embed
     $foto_cell = '—';
     $foto_path = 'uploads/' . $row['foto_paket'];
     if ($row['foto_paket'] && file_exists($foto_path)) {
@@ -87,7 +83,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     $html .= '</tr>';
 }
 
-// Footer row
 $html .= '<tr style="background:#2D1B4E; color:white; font-weight:bold;">';
 $html .= '<td colspan="6" style="text-align:right; padding:8px;">TOTAL NILAI SELURUH PAKET:</td>';
 $html .= '<td style="text-align:right; color:#FFD93D;">Rp' . number_format($total_harga, 0, ',', '.') . '</td>';
