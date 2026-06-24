@@ -52,7 +52,6 @@ if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
             min-height: 100vh;
         }
 
-        /* ── NAVBAR ── */
         .navbar-snapstudio {
             background: linear-gradient(90deg, #FF6B9D 0%, #C084FC 50%, #06B6D4 100%);
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
@@ -173,7 +172,6 @@ if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
         }
         .page-header h1 span { color: #FF6B9D; }
 
-        /* ── BUTTONS ── */
         .btn-snap-primary {
             background: linear-gradient(135deg, #FF6B9D, #C084FC);
             color: white; border: none;
@@ -201,7 +199,6 @@ if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
         }
         .btn-snap-danger:hover { transform: translateY(-2px); color: white; }
 
-        /* ── CARDS ── */
         .snap-card {
             background: white;
             border-radius: 20px;
@@ -210,7 +207,6 @@ if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
         }
         .snap-card .card-body { padding: 24px; }
 
-        /* ── STAT CARDS ── */
         .stat-card {
             border-radius: 20px;
             padding: 22px;
@@ -246,7 +242,6 @@ if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
             opacity: 0.85;
         }
 
-        /* ── TABLE ── */
         .snap-table { width: 100%; border-collapse: collapse; }
         .snap-table thead tr {
             background: linear-gradient(135deg, #FF6B9D, #C084FC);
@@ -272,7 +267,6 @@ if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
             color: var(--text-dark);
         }
 
-        /* ── BADGES ── */
         .badge-snap {
             display: inline-block;
             padding: 4px 12px; border-radius: 50px;
@@ -285,7 +279,6 @@ if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
         .badge-green { background: #DCFCE7; color: #16A34A; }
         .badge-red { background: #FFE4E4; color: #DC2626; }
 
-        /* ── ACTION BUTTONS ── */
         .btn-action {
             padding: 6px 14px;
             border-radius: 50px;
@@ -308,7 +301,6 @@ if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
         }
         .btn-delete:hover { transform: scale(1.05); color: white; }
 
-        /* ── FORMS ── */
         .form-label {
             font-weight: 700; font-size: 0.85rem;
             color: var(--text-dark); margin-bottom: 5px;
@@ -328,7 +320,6 @@ if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
         }
         textarea.form-control { resize: vertical; }
 
-        /* ── IMAGE PREVIEW ── */
         .img-preview-wrap {
             border: 2px dashed #FFB3CE;
             border-radius: 16px;
@@ -344,7 +335,6 @@ if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
             object-fit: cover;
         }
 
-        /* ── TOASTR CUSTOM ── */
         .toast-title { font-family: 'Nunito', sans-serif; font-weight: 800; }
         .toast-message { font-family: 'Nunito', sans-serif; }
         #toast-container > .toast-success {
@@ -364,7 +354,6 @@ if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
             border-left: 4px solid #FFD93D;
         }
 
-        /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
             .sidebar { transform: translateX(-100%); transition: 0.3s; }
             .sidebar.open { transform: translateX(0); }
