@@ -13,14 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tanggal_input = $_POST['tanggal_input'];
     $status       = $_POST['status'];
 
-    // Cek duplikat ID
     $cek = mysqli_query($koneksi, "SELECT id_paket FROM tb_paket_foto WHERE id_paket='$id_paket'");
     if (mysqli_num_rows($cek) > 0) {
         header("Location: tambah.php?error=Kode+paket+sudah+digunakan!");
         exit();
     }
 
-    // Upload foto
     $foto_paket = '';
     if (!empty($_FILES['foto_paket']['name'])) {
         $allowed = ['jpg','jpeg','png','webp','gif'];
@@ -45,7 +43,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               (id_paket, nama_paket, kategori, durasi_sesi, jumlah_foto, harga, deskripsi, tanggal_input, foto_paket, status)
               VALUES (?,?,?,?,?,?,?,?,?,?)";
     $stmt = mysqli_prepare($koneksi, $query);
-    // sssiidssss: string,string,string,int,int,double,string,string,string,string
     mysqli_stmt_bind_param($stmt, "sssiidssss", $id_paket, $nama_paket, $kategori, $durasi_sesi, $jumlah_foto, $harga, $deskripsi, $tanggal_input, $foto_paket, $status);
 
     if (mysqli_stmt_execute($stmt)) {
@@ -79,7 +76,6 @@ $(document).ready(function(){
     <form action="" method="post" enctype="multipart/form-data">
       <div class="row g-3">
 
-        <!-- Kiri -->
         <div class="col-md-6">
           <div class="mb-3">
             <label class="form-label"><i class="fas fa-hashtag me-1" style="color:#FF6B9D;"></i>Kode Paket <span style="color:red">*</span></label>
@@ -112,7 +108,6 @@ $(document).ready(function(){
           </div>
         </div>
 
-        <!-- Kanan -->
         <div class="col-md-6">
           <div class="mb-3">
             <label class="form-label"><i class="fas fa-money-bill-wave me-1" style="color:#FF6B9D;"></i>Harga (Rp) <span style="color:red">*</span></label>
@@ -135,7 +130,6 @@ $(document).ready(function(){
           </div>
         </div>
 
-        <!-- Deskripsi -->
         <div class="col-12">
           <div class="mb-3">
             <label class="form-label"><i class="fas fa-align-left me-1" style="color:#FF6B9D;"></i>Deskripsi Paket</label>
@@ -143,7 +137,6 @@ $(document).ready(function(){
           </div>
         </div>
 
-        <!-- Submit -->
         <div class="col-12 d-flex gap-2 justify-content-end">
             <a href="paket.php" style="padding:10px 24px; border-radius:50px; background:#f0e0f0; color:#2D1B4E; font-weight:700; text-decoration:none;">
                 <i class="fas fa-times me-1"></i> Batal
